@@ -11,7 +11,7 @@ RUN mkdir /tmp/haproxy
 
 WORKDIR /tmp/haproxy
 
-RUN curl -#L "http://www.haproxy.org/download/2.5/src/haproxy-2.5.7.tar.gz" | tar --strip=1 -xzC "."
+RUN curl -#L "http://www.haproxy.org/download/2.6/src/haproxy-2.6.0.tar.gz" | tar --strip=1 -xzC "."
 
 RUN make -C /tmp/haproxy -j $(nproc) TARGET=linux-glibc CPU=generic USE_PCRE2=1 USE_PCRE2_JIT=1 USE_OPENSSL=1 \
                             USE_TFO=1 USE_LINUX_TPROXY=1 USE_LUA=1 USE_GETADDRINFO=1 \
